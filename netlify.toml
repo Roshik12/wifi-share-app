@@ -1,0 +1,33 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/messages"
+  to = "/.netlify/functions/messages"
+  status = 200
+
+[[redirects]]
+  from = "/api/groups/suggest"
+  to = "/.netlify/functions/groups-suggest"
+  status = 200
+
+[[redirects]]
+  from = "/api/groups"
+  to = "/.netlify/functions/groups"
+  status = 200
+
+[[redirects]]
+  from = "/api/groups/join"
+  to = "/.netlify/functions/groups-join"
+  status = 200
+
+[[redirects]]
+  from = "/api/file"
+  to = "/.netlify/functions/file"
+  status = 200
+
+[[redirects]]
+  from = "/api/admin-backup"
+  to = "/.netlify/functions/admin-backup"
+  status = 200

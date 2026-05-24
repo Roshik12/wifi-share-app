@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Local WiFi Share</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #101114;
+        --panel: #181a20;
+        --text: #f5f7fb;
+        --muted: #aeb6c4;
+        --line: #303640;
+        --accent: #66d9a6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background:
+          radial-gradient(circle at top left, rgba(102, 217, 166, 0.16), transparent 34%),
+          var(--bg);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      main {
+        width: min(680px, 100%);
+        padding: clamp(24px, 6vw, 48px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      h1,
+      p {
+        margin-top: 0;
+      }
+
+      a {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12px;
+        padding: 0 20px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #07100b;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      code {
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Local WiFi Share</h1>
+      <p>
+        This is the app launcher. The old 3D page is still the root <code>index.html</code>,
+        so use this file when you want the WiFi Share app.
+      </p>
+      <p>
+        First start the Node server, then open the app at <code>http://localhost:3000</code>.
+      </p>
+      <a href="http://localhost:3000/">Open WiFi Share App</a>
+    </main>
+  </body>
+</html>

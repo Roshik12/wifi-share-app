@@ -1,0 +1,21 @@
+# Copy this to fly.toml only if you do not use `flyctl launch`.
+# Replace YOUR_APP_NAME with the app name Fly gives you.
+
+app = "YOUR_APP_NAME"
+primary_region = "sin"
+
+[env]
+  DATA_DIR = "/data"
+  UPLOADS_DIR = "/data/uploads"
+
+[[mounts]]
+  source = "wifi_share_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]

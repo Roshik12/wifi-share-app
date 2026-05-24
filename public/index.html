@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local WiFi Share</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-app" id="chatApp" aria-label="Local chat">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow" id="modeKicker">Main board</p>
+            <h1>Local WiFi Share</h1>
+            <p class="room-label" id="roomLabel">Main room · messages expire after 28 hours</p>
+          </div>
+          <div class="status">
+            <span class="status-dot" id="statusDot"></span>
+            <span id="statusText">Connecting</span>
+          </div>
+        </header>
+
+        <section class="mode-banner" id="modeBanner">
+          <div>
+            <p class="mode-title" id="modeTitle">Normal share</p>
+            <p class="mode-copy" id="modeCopy">
+              Open anonymous room for quick text, code, links, images, and files.
+            </p>
+          </div>
+          <span class="mode-pill" id="modePill">Open</span>
+        </section>
+
+        <div class="server-warning hidden" id="serverWarning">
+          This app needs the local server. Start it with npm start, then open http://localhost:3000
+          or your WiFi IP address.
+        </div>
+
+        <section class="messages" id="messages" aria-live="polite"></section>
+
+        <form class="composer" id="messageForm">
+          <label class="file-button" for="fileInput">File</label>
+          <input id="fileInput" name="file" type="file" />
+          <textarea
+            id="messageInput"
+            name="text"
+            rows="3"
+            placeholder="Share text, notes, code, links, or paste a big block..."
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+
+        <div class="upload-preview hidden" id="uploadPreview">
+          <span id="fileName"></span>
+          <button type="button" id="clearFile">Remove</button>
+        </div>
+
+        <section class="group-panel" aria-label="Private group controls">
+          <div>
+            <p class="group-title">Group talk</p>
+            <p class="group-help">Create or join a password-matched group. Group names are unique.</p>
+          </div>
+          <div class="group-fields">
+            <input id="groupName" type="text" maxlength="40" autocomplete="off" placeholder="group-name" />
+            <input
+              id="accessCode"
+              type="password"
+              maxlength="80"
+              autocomplete="current-password"
+              placeholder="group password"
+            />
+          </div>
+          <div class="group-actions">
+            <button type="button" id="randomGroup">Random name</button>
+            <button type="button" id="createGroup">Create</button>
+            <button type="button" id="joinGroup">Join</button>
+            <button type="button" id="mainGroup">Main</button>
+          </div>
+          <p class="group-status" id="groupStatus"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
